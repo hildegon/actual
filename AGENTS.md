@@ -42,6 +42,22 @@ yarn start:desktop
 - Use `yarn workspace <workspace-name> run <command>` for workspace-specific tasks
 - Tests run once and exit by default (using `vitest --run`)
 
+### 🚫 NEVER push or open PRs against the upstream repository
+
+This checkout belongs to a fork. **All work stays on the fork
+(`hildegon/actual`, remote `fork`) and on local branches.**
+
+- **NEVER** push to, open a pull request against, comment on, review, or merge
+  into `actualbudget/actual` (remote `origin`). No exceptions, even if asked to
+  "make a PR" or "merge" — confirm the target repo with the user first, and
+  default to the fork.
+- Push only with `git push fork <branch>`. The `origin` push URL is disabled on
+  purpose; do not re-enable it.
+- When using `gh`, always pass `--repo hildegon/actual` (e.g.
+  `gh pr create --repo hildegon/actual --head <branch> --base master`). Never
+  pass `--repo actualbudget/actual` for any write action.
+- Fetching/pulling from `origin` is fine (read-only).
+
 ### ⚠️ PR titles must start with `[AI]`
 
 Every pull request title must be prefixed with `[AI]` — you have to apply it
